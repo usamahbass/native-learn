@@ -1,39 +1,29 @@
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screen/home';
 import Review from '../screen/review';
 
-const screen = {
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      title: 'Fairy Tales',
-      headerTintColor: '#fff',
-      headerStyle: {
-        backgroundColor: 'green',
-      },
-    },
-  },
-  Review: {
-    screen: Review,
-    navigationOptions: {
-      title: 'Review Fairy Tales',
-      headerTintColor: '#fff',
-      headerStyle: {
-        backgroundColor: 'green',
-      },
-    },
-  },
+const Stack = createStackNavigator();
+
+const HomeStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerStyle: {
+              backgroundColor: 'green',
+            },
+            headerTintColor: "white"
+          }}
+        />
+        <Stack.Screen name="Review" component={Review} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 };
 
-const HomeStack = createStackNavigator(screen, {
-    // if you use default options 
-    defaultNavigationOptions: {
-        headerTintColor: "#fff",
-        headerStyle: {
-            backgroundColor: "green"
-        }
-    }
-});
-
-export default createAppContainer(HomeStack);
+export default HomeStack;

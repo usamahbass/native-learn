@@ -7,6 +7,7 @@ export default function Review({navigation}) {
        <View style={globalStyles.container}>
            <Text style={globalStyles.title} >{navigation.getParam("title")}</Text>
            <Text style={globalStyles.title} >{navigation.getParam("body")}</Text>
+           <Text style={globalStyles.title} >{navigation.getParam("rating")}</Text>
        </View>
     )
 }

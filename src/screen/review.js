@@ -5,9 +5,8 @@ import { globalStyles } from '../styles/globalStyles';
 export default function Review({navigation}) {
     return (
        <View style={globalStyles.container}>
-           <Text>This Review</Text>
-
-           <Button title="Back to home" color="#000" onPress={() => navigation.goBack()} />
+           <Text style={globalStyles.title} >{navigation.getParam("title")}</Text>
+           <Text style={globalStyles.title} >{navigation.getParam("body")}</Text>
        </View>
     )
 }

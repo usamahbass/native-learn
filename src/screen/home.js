@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
-import { globalStyles} from '../styles/globalStyles';
+import { globalStyles } from '../styles/globalStyles';
 
 export default function Home({navigation}) {
-  const [reviews, setReviews] = React.useState([
+  const [reviews] = React.useState([
     {
       id: 1,
       title: 'Si Kancil',

@@ -1,7 +1,8 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screen/home';
 import Review from '../screen/review';
+import Header from '../shared/header';
 
 const Stack = createStackNavigator();
 
@@ -11,11 +12,13 @@ const HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{
-          headerStyle: {
-            backgroundColor: 'green',
-          },
-          headerTintColor: 'white',
+        options={({navigation}) => {
+          return {
+            headerTitle: () => <Header navigation={navigation} title="Raksye App" />,
+            headerStyle: {
+              backgroundColor: "#333"
+            }
+          };
         }}
       />
       <Stack.Screen
@@ -23,7 +26,7 @@ const HomeStack = () => {
         component={Review}
         options={{
           headerStyle: {
-            backgroundColor: 'green',
+            backgroundColor: '#333',
           },
           headerTintColor: 'white',
         }}

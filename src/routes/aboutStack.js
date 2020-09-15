@@ -1,6 +1,7 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import About from '../screen/about';
+import Header from '../shared/header';
 
 const Stack = createStackNavigator();
 
@@ -10,11 +11,13 @@ const AboutStack = () => {
       <Stack.Screen
         name="About"
         component={About}
-        options={{
-          headerStyle: {
-            backgroundColor: 'green',
-          },
-          headerTintColor: 'white',
+        options={({navigation}) => {
+          return {
+            headerTitle: () => <Header navigation={navigation} title="About"  />,
+            headerStyle: {
+              backgroundColor: "#333"
+            }
+          }
         }}
       />
     </Stack.Navigator>

@@ -13,8 +13,8 @@ export default function Review({route}) {
       <Text style={globalStyles.title}>{body}</Text>
       <View style={styles.rating}>
         <Text>Rating :</Text>
-        {icon.map(() => (
-          <Icon name="star" color="#ffe234" size={20} />
+        {icon.map((index) => (
+          <Icon key={index} name="star" color="#ffe234" size={20} />
         ))}
       </View>
     </View>
@@ -24,6 +24,10 @@ export default function Review({route}) {
 const styles = StyleSheet.create({
   rating: {
     flexDirection: 'row',
-    justifyContent: "space-between"
+    justifyContent: "center",
+    paddingTop: 16,
+    marginTop: 16,
+    borderTopWidth: 1,
+    borderTopColor: "#eee"
   },
 });

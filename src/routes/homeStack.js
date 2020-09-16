@@ -14,7 +14,7 @@ const HomeStack = () => {
         component={Home}
         options={({navigation}) => {
           return {
-            headerTitle: () => <Header navigation={navigation} title="Raksye App" />,
+            headerTitle: () => <Header navigation={navigation} title="Dongeng App" />,
             headerStyle: {
               backgroundColor: "#333"
             }
